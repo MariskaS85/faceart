@@ -1,0 +1,49 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item dropdown bg-dark">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Products
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown bg-dark">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="wall-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Wall decoration
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+                <a href="{% url 'products' %}?category=wood" class="dropdown-item">Wood</a>
+                <a href="{% url 'products' %}?category=aluminium" class="dropdown-item">Aluminium</a>
+                <a href="{% url 'products' %}?category=plexiglass" class="dropdown-item">Plexiglass</a>
+                <a href="{% url 'products' %}?category=wood, aluminium, plexiglass" class="dropdown-item">All Wall decorations</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown bg-dark">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="objects-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Homeware
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="objects-link">
+                <a href="{% url 'products' %}?category=mugs" class="dropdown-item">Mugs</a>
+                <a href="{% url 'products' %}?category=lights" class="dropdown-item">Lights</a>
+                <a href="{% url 'products' %}?category=glasses" class="dropdown-item">Glasses</a>
+                <a href="{% url 'products' %}?category=mugs, lights, glasses" class="dropdown-item">All objects</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown bg-dark">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Homeware
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                <a href="{% url 'products' %}?category=holidays" class="dropdown-item">Holidays</a>
+                <a href="{% url 'products' %}?category=celebrations" class="dropdown-item">Celebrations</a>
+                <a href="{% url 'products' %}?category=holidays, celebrations" class="dropdown-item">All Specials</a>
+            </div>
+        </li>
+    </ul>
+</div>

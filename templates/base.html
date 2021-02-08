@@ -38,21 +38,18 @@
     </head>
     <body>
     <header class="container-fluid fixed-top">
-        <div id="" class="row bg-dark pt-lg-2 d-none d-lg-flex">
+        <div id="topnav" class="row bg-dark pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-lnk">
-                    <h2 class="logo-font text-white my-0"><strong class="logo-font">Titik</strong><small>Youre face is a piece of art</small></h2>
+                    <h2 class="logo-font text-white my-0"><strong>Titik</strong><small>Your Face is a Piece of Art</small></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-               
-            </div>
-            <div class="col-6 col-lg-4 my-auto py-1 py-lg-0">
-                 <form method="GET" action=" {% url 'products' %}">
+                <form method="GET" action=" {% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search">
+                        <input class="form-control border border-dark rounded-0" type="text" name="q" placeholder="Search">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-dark border border-dark rounded-0" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -60,7 +57,9 @@
                         </div>
                     </div>
                 </form>
-                <ul class="list-inline list-unstyled text-center text-lg-right my-1">
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                      <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -99,77 +98,17 @@
             </div>
         </div>
         <div class="row bg-dark">
-            <nav class="navbar navbar-expand-lg navbar-dark w-100">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %} 
             </nav>
-            <div class="col bg-dark text-white">
+            <div class="col bg-dark txt-white">
                 <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_theshold }}!</h4>
             </div>
         </div>
     </header>
-
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             
    {% if messages %}
         <div class="message-container">
@@ -185,8 +124,8 @@
                         {% include 'includes/toasts/toast_info.html' %}
                     {% endif %}
                 {% endwith %}
-            {% endfor %}
-        </div> --> 
+            {% endfor %} --> 
+        </div> 
     {% endif %}
 
     {% block page_header %}
