@@ -19,6 +19,16 @@ body {
     z-index: -1;
 }
 
+.btn-btn {
+    height: 35px;
+    width: 35px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}}
+.btn-link {
+    cursor: pointer;
+}
 
 /* from Bulma */
 .icon {
@@ -38,14 +48,9 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: #212529;
     color: white;
     min-width: 260px;
-}
-
-.btn-black {
-    background: black;
-    color: white;
 }
 
 .shop-now-button:hover,

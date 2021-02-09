@@ -16,11 +16,12 @@
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="wall-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Wall decoration
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
+            <div class="dropdown-menu border-0" aria-labelledby="wall-link">
+                <a href="{% url 'products' %}?category=canvas" class="dropdown-item">Canvas</a>
                 <a href="{% url 'products' %}?category=wood" class="dropdown-item">Wood</a>
                 <a href="{% url 'products' %}?category=aluminium" class="dropdown-item">Aluminium</a>
                 <a href="{% url 'products' %}?category=plexiglass" class="dropdown-item">Plexiglass</a>
-                <a href="{% url 'products' %}?category=wood, aluminium, plexiglass" class="dropdown-item">All Wall decorations</a>
+                <a href="{% url 'products' %}?category=canvas,wood, aluminium, plexiglass" class="dropdown-item">All Wall decorations</a>
             </div>
         </li>
 
