@@ -9,6 +9,16 @@ body {
     color: #555;
     font-family: 'Oswald';
 }
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
 
 /* from Bulma */
 .icon {
@@ -70,5 +80,8 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+    .body {
+        height: calc(100vh - 116pc);
     }
 }
