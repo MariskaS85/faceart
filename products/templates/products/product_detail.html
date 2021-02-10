@@ -46,21 +46,7 @@
                          <!-- form below is quantity button and keep shopping button-->
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                             {% csrf_token %}
-                            <div class="form_row">
-                                {% with product.has_sizes as s %}
-                                {% if s %}
-                                    <div class="col-12">
-                                        <p><strong>Size:</strong></p>
-                                        <select name="product_size" id="id_product_size" class="form-control rounded-0 w-50">
-                                            <option value="xs">XS</option>
-                                            <option value="s">S</option>
-                                            <option value="m" selected>M</option>
-                                            <option value="l">L</option>
-                                            <option value="xl">XL</option>
-                                        </select>
-                                    </div>
-                                {% endif %}
-                                
+                            <div class="form_row">                           
                                 <div class="col-12">
                                     <p class="mt-3"><strong>Quantity</strong></p>
                                     <div class="form-group w-50">
@@ -85,8 +71,8 @@
                                         </div>
                                     </div> 
                                 </div>
-                                <div class="col{% if s %}-12 mt-2{% endif %}">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-3">
+                                <div class="col-12 mt-2">
+                                    <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 mt-3">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
@@ -96,7 +82,6 @@
                                 </div>
                                  <!-- redirect button to send customers back to shop-->
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                {% endwith %}
                             </div>
                         </form>
                     </div>                   
