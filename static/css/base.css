@@ -63,6 +63,10 @@ body {
     color: white;
 }
 
+.message-container {
+    position: fixed;
+    top: 72px;
+}
 
 /* -------------------------------- Media Queries */
 

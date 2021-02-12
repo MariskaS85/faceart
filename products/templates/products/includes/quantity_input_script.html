@@ -1,4 +1,3 @@
-  
 <script type="text/javascript">
 //Disable +/- buttons outside of range 1-99
     function handleEnableDisable(itemId) {
@@ -9,7 +8,7 @@
         $('#increment-qty_${itemId}').prop('disabled', plusDisabled);
     }
 //ensure proper enableing/disabling of all inputs on load page
-    var allQtyInputs = $('.qty_inputs');
+    var allQtyInputs = $('.qty_input');
     for (var i = 0; i < allQtyInputs.length; i++) {
         var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
