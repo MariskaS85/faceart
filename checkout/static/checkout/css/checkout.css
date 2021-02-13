@@ -1,0 +1,10 @@
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: #161c2d;
+    border: 1px solid #161c2d;
+}
