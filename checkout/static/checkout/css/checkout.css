@@ -39,3 +39,20 @@
     color: #161c2d;
     border: 1px solid #161c2d;
 }
+#loading-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 37, 41, 0.1);
+    z-index: 999;
+}
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: 100%;
+}
