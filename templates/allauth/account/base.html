@@ -32,6 +32,17 @@
       </ul>
     </div>
     {% block content %}
+        <div class="container header-container">
+            <div class="overlay"></div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="allauth-form-immer-content">
+                        {% block inner_content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endblock %}
     {% endblock %}
     {% block extra_body %}
