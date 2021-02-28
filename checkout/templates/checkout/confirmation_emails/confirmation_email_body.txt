@@ -1,0 +1,16 @@
+Hi {{ order.full_name }}!
+
+Thank you for your order at Titik!
+
+Your order ( {{ order.order_number }} ) done on {{ order.date }} will be made and delivered to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+The total cost of €{{ order.grand_total }} is split between €{{ order.order_total }} for your order and €{{ order.delivery_cost }} for the shipping.
+
+
+If you have any questions just contact us on {{ contact_email }}.
+
+Thank you for ordering your personailized portrait at Titik!
+
+Kind regards
+
+Anne from Titik
