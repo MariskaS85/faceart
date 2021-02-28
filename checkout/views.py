@@ -7,8 +7,9 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-
 from products.models import Product
+from profiles.forms import UserProfileForm
+from profiles.models import UserProfiles
 from bag.contexts import bag_contents
 
 import stripe
@@ -71,7 +72,7 @@ def checkout(request):
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database."
+                        "We couldn't find on of the products in your bag."
                         "Please call us for assistance!")
                     )
                     order.delete()
@@ -85,7 +86,7 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(request, "Your bag is still empty")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -97,7 +98,24 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial={
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user_email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address1': profile.default_street_address1,
+                    'street_address2': profile.default_street_address2,
+                    'county': profile.default_county,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
@@ -112,6 +130,7 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_request(request, order_number):
     save_info = request.session.get('save_info')
     order = get_object_or_404(order_number=order_number)
@@ -121,13 +140,14 @@ def checkout_request(request, order_number):
 
     if 'bag' in request.session:
         del request.session['bag']
-    
+
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
     }
 
     return render(request, template, context)
+
 
 def checkout_success(request, order_number):
     """

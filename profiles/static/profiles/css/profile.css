@@ -1,3 +1,9 @@
+.order-history {
+    max-height: 416px; /* profie height and submit button */
+    overflow-y: auto;
+}
+
+
 .profile-update-form .form-control {
     color: black;
 }
