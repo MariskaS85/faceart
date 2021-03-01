@@ -16,7 +16,7 @@ SECRET_KEY = 'sk_test_51IGnAWFmJAyuyKG9aAPOPeDhZ3jnti8PaeAFHtMUxqrMhE2JxkzkV05VG
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['titik-shop.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -112,16 +112,17 @@ WSGI_APPLICATION = 'faceart.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-# DATABASES = {
-#     'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://rnfiztwbnwtzpm:0bfa00ed5768b7a54ad690accfce048d2772b08824d021e5899bb42685db29bb@ec2-54-73-68-39.eu-west-1.compute.amazonaws.com:5432/d16hv9p1oemcu3'),
- }
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
