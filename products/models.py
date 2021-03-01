@@ -15,6 +15,7 @@ class Category(models.Model):
     def get_friendy_name(self):
         return self.friendly_name
 
+
 # this shows the labels in the django admin
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
