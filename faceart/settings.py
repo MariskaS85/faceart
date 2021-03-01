@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -111,14 +112,15 @@ WSGI_APPLICATION = 'faceart.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
-
+ }
+# DATABASES = {
+#     'default': dj_database_url.parse(postgres://rnfiztwbnwtzpm:0bfa00ed5768b7a54ad690accfce048d2772b08824d021e5899bb42685db29bb@ec2-54-73-68-39.# eu-west-1.compute.amazonaws.com:5432/d16hv9p1oemcu3),
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
