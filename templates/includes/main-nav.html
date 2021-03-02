@@ -6,7 +6,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=size&direction=desc" class="dropdown-item ">By Size</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
@@ -17,33 +17,22 @@
                 Wall decoration
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="wall-link">
-                <a href="{% url 'products' %}?category=canvas" class="dropdown-item">Canvas</a>
-                <a href="{% url 'products' %}?category=wood" class="dropdown-item">Wood</a>
-                <a href="{% url 'products' %}?category=aluminium" class="dropdown-item">Aluminium</a>
-                <a href="{% url 'products' %}?category=plexiglass" class="dropdown-item">Plexiglass</a>
-                <a href="{% url 'products' %}?category=canvas,wood, aluminium, plexiglass" class="dropdown-item">All Wall decorations</a>
+                <a href="{% url 'products' %}?category=canvas,diptych_canvas" class="dropdown-item">Canvas</a>
+                <a href="{% url 'products' %}?category=wood,diptych_wood" class="dropdown-item">Wood</a>
+                <a href="{% url 'products' %}?category=aluminium,diptych_aluminium" class="dropdown-item">Aluminium</a>
+                <a href="{% url 'products' %}?category=plexiglass,diptych_plexiglass" class="dropdown-item">Plexiglass</a>
+                <a href="{% url 'products' %}?category=canvas,diptych_canvas,wood,diptych_wood,aluminium,diptych_aluminium,plexiglass,diptych_plexiglass" class="dropdown-item">All Wall decorations</a>
             </div>
         </li>
 
         <li class="nav-item dropdown bg-dark">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="objects-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Objects
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="objects-link">
-                <a href="{% url 'products' %}?category=mugs" class="dropdown-item">Mugs</a>
-                <a href="{% url 'products' %}?category=lights" class="dropdown-item">Lights</a>
-                <a href="{% url 'products' %}?category=glasses" class="dropdown-item">Glasses</a>
-                <a href="{% url 'products' %}?category=mugs, lights, glasses" class="dropdown-item">All objects</a>
-            </div>
-        </li>
-        <li class="nav-item dropdown bg-dark">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Specials
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=holidays" class="dropdown-item">Holidays</a>
-                <a href="{% url 'products' %}?category=celebrations" class="dropdown-item">Celebrations</a>
-                <a href="{% url 'products' %}?category=holidays, celebrations" class="dropdown-item">All Specials</a>
+            <div class="dropdown-menu border-0" aria-labelledby="objects-link">
+                <a href="{% url 'products' %}?category=objects,Specials" class="dropdown-item">Objects</a>
+                <a href="{% url 'products' %}?category=diptych_canvas,diptych_wood,diptych_plexiglass" class="dropdown-item">Diptych</a>
+                <a href="{% url 'products' %}?category=objects,Specials,diptych_canvas,diptych_wood,diptych_plexiglass" class="dropdown-item">All objects</a>
             </div>
         </li>
     </ul>

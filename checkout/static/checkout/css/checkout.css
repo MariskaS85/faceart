@@ -22,7 +22,7 @@
 }
 
 .StripeElement--webkit-autofill {
-    background-color: blue !important;
+    background-color: gray !important;
 }
 
 .stripe-style-input::placeholder {

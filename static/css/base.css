@@ -15,7 +15,7 @@ body {
     top: 0;
     left: 0;
     position: fixed;
-    background: white;
+    background: #212529;
     z-index: -1;
 }
 
@@ -59,10 +59,10 @@ body {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-blue:hover,
-.btn-blue:active,
-.btn-blue:focus {
-    background: rgb(33, 30, 226);
+.btn-gray:hover,
+.btn-gray:active,
+.btn-gray:focus {
+    background: gray;
     color: white;
 }
 
@@ -144,7 +144,7 @@ input[name='q']::placeholder {
 }
 
 .allauth-form-inner-content a {
-	color: blue; /* text-info */
+	color: gray; /* text-info */
 }
 /* ------------------------------------------------------------------- Product Form */
 

@@ -13,8 +13,8 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+            <div class="col text-center mt-5">
+                <h2 class="logo-font ">Products</h2>
                 {% for c in current_categories %}                
                     <a href="{% url 'products' %}? category={{ c.name }}" class="category-badge text-decoration-none">
                         <span class="p-2 mt-2 badge badge-white bg-dark text-white rounded-0 border border-dark">{{ c.friendly_name }}</span>
@@ -32,8 +32,8 @@
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}> Sort by ...</option>
                                 <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}> Price (low to high)</option>
                                 <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}> Price (high to low)</option>
-                                <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}> Rating (low to high)</option>
-                                <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}> Rating (high to low)</option>
+                                <option value="size_asc" {% if current_sorting == 'size_asc' %}selected{% endif %}> Size (low to high)</option>
+                                <option value="size_desc" {% if current_sorting == 'size_desc' %}selected{% endif %}> Size (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}> Name (A - Z)</option>
                                 <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}> Name (A - Z)</option>
                                 <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}> Category (A - Z)</option>
@@ -44,9 +44,9 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if search_term or current_categories != 'None_None' %}
-                                <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
+                                <span class="small text-white text-decoration-none"><a class="text-white text-decoration-none" href="{% url 'products' %}">All Products</a> | </span>
                             {% endif %}
-                            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                            {{ products|length }} Products{% if search_term %} found for <strong>" {{ search_term }}"</strong>{% endif %}
                         </p>
                     </div>
                 <div class="row">
@@ -62,8 +62,8 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                <div class="card-body pb-0 bg-dark text-white">
+                                    <p class="mb-0font-weight-bold">{{ product.name }}</p>
                                 </div>
                                 <div class="card-footer bg-dark pt-0 border-0 text-left text-white">
                                     <div class="row">
@@ -76,10 +76,10 @@
                                                 </a>
                                             </p>
                                             {% endif %}
-                                            {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                            {% if product.size %}
+                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>The size is {{ product.size }} out of 3</small>
                                             {% else %}
-                                                <small class="text-muted">No Rating</small>
+                                                <small class="text-muted"> No Size</small>
                                             {% endif %}
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3"></small>
@@ -117,7 +117,7 @@
         </div>
     </div>
     <!-- Scroll to top button -->
-    <div class="btt-button shadow-sm rounded-0 border border-black">
+    <div class="btt-button rounded-0 border-black bg-dark m-4 t-4">
         <a class="btn-link d-flex h-100">
             <i class="fas fa-arrow-up text-white mx-auto my-auto bg-dark"></i>
         </a>
