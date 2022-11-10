@@ -10,7 +10,7 @@ The reason to use the template of Code Institute is because Code Insitute has a 
 
 The Landing page is a common image of a landmarked face and should give people an idea of what their wall decoration would look like in close-up.
 
-# User Stories
+## User Stories
 During the development I used user stories as a guideline in funtionalities. Below you can find the stories used.
 
 User story ID	|  As an/a	|  I want to be able to…	|  So that I can…
@@ -32,7 +32,7 @@ User story ID	|  As an/a	|  I want to be able to…	|  So that I can…
 15	|Paying client|	I want to pay easily without to many hurdles	|So the chances are that i will execute the payment
 16	|Paying client|	know if all payments were done correctly|	So i feel safe that the payments are transfered correctly
 
-# Features
+## Features
 The first part is the product page. Here you can find all products. When clicking on different categories in the menu you can select products you are interesed in. There are three different sizes for the wall decorations. Small, Medium and Large. In addition, there are four different materials you can choose from: Canvas, Wood, Aluminium and Plexiglass.
 
 The images give you an idea of the size of the image. 
@@ -41,7 +41,7 @@ In addition to the you can also buy a cup and a glass with facial landmarks engr
 
 Current users can login and create an account, see their past orders and their profile information. 
 
-# Features left to Implement
+## Features left to Implement
 The next main implementation would be letting customers upload their image to be analyzed to get an idea what their face would look like on the products ordered.
 
 ## Technology used
@@ -52,7 +52,7 @@ The next main implementation would be letting customers upload their image to be
 * Python
 * JSON
 
-# Used Plaforms
+## Used Plaforms
 * Coding: GitHub/GitPod
 * Fonts: Google Fonts
 * Icons: Font Awsome
@@ -60,7 +60,7 @@ The next main implementation would be letting customers upload their image to be
 * Media hosting: Amazon Webservices
 * Deployment: Heroku
 
-# Deployment
+## Deployment
 All coding was done in GitPod and commited to GitHub. After this the deployment was done on HEROKU, with the media files and static files stored on AMAZON WEB SERVICES. 
 
 ## settings
@@ -78,8 +78,8 @@ All coding was done in GitPod and commited to GitHub. After this the deployment 
 - Database location of static files and Media files are set
 - Stripe Settings are initiated.
 
-# Extra
-The main font i have been using is the 'Oswald' and during one of my distraction i came accross the website of the designer of the font, Vernon Adams, who died on August 24 2016. Even though Vernon designed a lot of the Fonts we use today his family doesn't receive (financial support). Therefore a foundation was set up to help his family 
+## Extra
+The main font i have been using is the 'Oswald' and during one of my distraction i came accross the website of the designer of the font, Vernon Adams, who died on August 24 2016. Even though Vernon designed a lot of the Fonts we use today his family doesn't receive (financial) support. Therefore a foundation was set up to help his family 
 http://sansoxygen.com/
 
 https://www.geeksforgeeks.org/try-except-vs-if-in-python/
